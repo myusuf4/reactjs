@@ -1,4 +1,5 @@
 import React from "react";
+import Hooks from "./Hook";
 
 class Class extends React.Component{
  constructor(prop){
@@ -14,6 +15,7 @@ class Class extends React.Component{
         <h1>COunt:{this.state.count}</h1>
         <button onClick={()=>this.setState({count:this.state.count+1})}>+</button>
         <button onClick={()=>this.setState({count: this.state.count-1})}>-</button>
+        <Hooks count={this.state.count}/>
       </div>
     )
   }
