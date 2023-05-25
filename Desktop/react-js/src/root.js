@@ -1,13 +1,13 @@
 import React from "react";
-import Class from "./Class";
-import Hook from "./Hook";
+import Navbar from "./Class";
+import Body from "./Hook";
 
 class Root extends React.Component{
     render(){
         return(
-            <div style={{display:"flex"}}>
-                <Class/>
-                <Hook/>
+            <div>
+                <Navbar/>
+                <Body/>
             </div>
         )
     }

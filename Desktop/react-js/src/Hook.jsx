@@ -2,14 +2,21 @@ import React,{useState} from "react";
 
 
 const Hooks=()=>  {
-   const [count,setCount]=useState(0);
-   
+    const[student,setStudent]=useState([
+        {id:1,name:"Muhammad",surname:"Nurmirzayev"},
+        {id:2,name:"Abdulloh",surname:"Davronov"},
+        {id:3,name:"AbduKarim",surname:"Muhammadov"},
+        {id:4,name:"AbduJalil",surname:"Muhiddinov"},
+        {id:5,name:"AbduQodir",surname:"Akbarov"},
+        {id:6,name:"Abdulloh",surname:"AbduKarimov"},
+        {id:7,name:"Kozim",surname:"Mannopov"},
+    ])
     return(
-        <div style={{flex:1}}>
-            <h1>Hello Hooks</h1>
-            <h1>Count:{count}</h1>
-            <button onClick={()=>setCount(count+1)}>+</button>
-            <button onClick={()=>setCount(count-1)}>-</button>
+        <div style={{background:"coral"}}>
+            <h1>BOdy</h1>
+                {student.map(v=>{
+                    return <h1 key={v.id}>Name:{v.name}</h1>
+                })}
         </div>
     )
 
