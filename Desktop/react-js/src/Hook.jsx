@@ -1,25 +1,22 @@
-import React,{useState} from "react";
+import { StudentContext } from "./context"
+import React,{useContext} from "react"
 
+const Body=()=>  {
+    const [students,setStudent]=useContext(StudentContext);
+    const onDelete=(id)=>{
+        let res=students.filter((st)=>st.id!==id)
+        setStudent(res);
+    }
 
-const Hooks=()=>  {
-    const[student,setStudent]=useState([
-        {id:1,name:"Muhammad",surname:"Nurmirzayev"},
-        {id:2,name:"Abdulloh",surname:"Davronov"},
-        {id:3,name:"AbduKarim",surname:"Muhammadov"},
-        {id:4,name:"AbduJalil",surname:"Muhiddinov"},
-        {id:5,name:"AbduQodir",surname:"Akbarov"},
-        {id:6,name:"Abdulloh",surname:"AbduKarimov"},
-        {id:7,name:"Kozim",surname:"Mannopov"},
-    ])
     return(
         <div style={{background:"coral"}}>
-            <h1>BOdy</h1>
-                {student.map(v=>{
-                    return <h1 key={v.id}>Name:{v.name}</h1>
+            <h1 >Student {students.length}</h1>
+                {students.map(student=>{
+                    return <h1 key={student.id}>Name:{student.name} <button onClick={()=>onDelete(student.id)}>delete</button></h1>
                 })}
         </div>
     )
 
 }
     
-export default Hooks
+export default Body

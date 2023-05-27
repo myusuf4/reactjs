@@ -1,21 +1,19 @@
 
-import React from "react";
-import Hooks from "./Hook";
-
-class Class extends React.Component{
- constructor(prop){
-  super(prop);
-  this.state={
-    count:0
-  }
- }
-  render(){
-    return(
-      <div style={{flex:1}}>
-        <h1>Navbar</h1>
-       
-      </div>
-    )
-  }
+const Navbar=({students})=>{
+  return(
+    <div style={{
+      background:"blue",
+      color:"white",
+      height:"70px",
+      display:"flex",
+      justifyContent:"space-around"
+    }}>
+      <h1>Students {0}</h1>
+      <h1>Home</h1>
+      <h1>About</h1>
+      <h1>Classes</h1>
+      <h1>Contact</h1>
+    </div>
+  )
 }
-export default Class
+export default Navbar;
