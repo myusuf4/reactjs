@@ -1,22 +1,25 @@
-import { StudentContext } from "./context"
-import React,{useContext} from "react"
+import React from "react";
+import { useState } from "react";
 
-const Body=()=>  {
-    const [students,setStudent]=useContext(StudentContext);
-    const onDelete=(id)=>{
-        let res=students.filter((st)=>st.id!==id)
-        setStudent(res);
-    }
-
-    return(
-        <div style={{background:"coral"}}>
-            <h1 >Student {students.length}</h1>
-                {students.map(student=>{
-                    return <h1 key={student.id}>Name:{student.name} <button onClick={()=>onDelete(student.id)}>delete</button></h1>
-                })}
-        </div>
-    )
-
+const Body = () => {
+  const [count,setCount]=useState(Number(localStorage.getItem('count')));
+  const plus=()=>{
+    localStorage.setItem('count',count+1)
+    setCount(count+1)
 }
-    
-export default Body
+const minus=()=>{
+      localStorage.setItem('count',count-1)
+    setCount(count-1)
+  }
+  return (
+    <div>
+      <h1>Count:{count}</h1>
+      <button onClick={plus}>+</button>
+      <button onClick={minus}>-</button>
+      <button onClick={() => localStorage.clear}>
+        Delete item
+      </button>
+    </div>
+  );
+};
+export default Body;
