@@ -1,13 +1,11 @@
 import React from "react";
-import Navbar from "./Class";
-import Body from "./Hook";
+import Fetch from "../component/fetch";
 
 class Root extends React.Component{
     render(){
         return(
             <div>
-                <Navbar/>
-                <Body/>
+                <Fetch/>
             </div>
         )
     }
